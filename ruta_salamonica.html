@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruta Salamónica</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Libre+Baskerville:wght@400&display=swap');
+
+    
+    @font-face {
+    font-family: "Morrison Regular";
+    src: url("./font/Morrison-Regular.otf") format("opentype");
+    font-display: swap;
+}
+    
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;
+    font-family:Arial,sans-serif;
+    line-height:1.6;
+    color:#e9e2d4;
+    background:#211b19;
+    
+    
+      background:url("./obras/cieloDeco.png") center / cover fixed no-repeat;
+        background-size: 100% 100%;
+    
+    }
+
+.contenedor{width:min(1100px,90%);margin:auto}
+
+
+.nav {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(28px, 5.5vw, 70px);
+    min-height: 110px;
+    padding: 20px 24px;
+}
+
+.nav a {
+    position: relative;
+    color: var(--crema);
+    text-decoration: none;
+    font-family: "Cinzel", serif;
+    font-size: clamp(12px, 1.35vw, 20px);
+    font-weight: 600;
+    letter-spacing: clamp(1px, .28vw, 4px);
+    transition: color .3s ease;
+}
+
+.nav a::before,
+.nav a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: clamp(12px, 2vw, 30px);
+    height: 1px;
+    background: var(--dorado);
+}
+
+.nav a::before {
+    right: calc(100% + 18px);
+}
+
+.nav a::after {
+    left: calc(100% + 18px);
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+
+
+.encabezado{padding:75px 0 55px;text-align:center}
+.titulo{margin-bottom:12px;font-size:120px;
+    
+    font-family: "Morrison Regular";
+    line-height:1.1}
+.subtitulo{margin-bottom:20px;color:#c4a982;font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:400}
+.descripcion{max-width:720px;margin:auto;color:#ded6c8}
+.linea-tiempo{position:relative;width:100%;padding:20px 0 50px}
+.linea-tiempo::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;transform:translateX(-50%);background:#9c8060}
+.evento{position:relative;display:flex;justify-content:flex-start;width:50%;padding:25px 45px 25px 0}
+.evento:nth-child(even){margin-left:50%;padding:25px 0 25px 45px}
+.evento::before{content:"";position:absolute;top:43px;right:-9px;width:16px;height:16px;border:2px solid #211b19;border-radius:50%;background:#c4a982;box-shadow:0 0 0 1px #9c8060}
+.evento:nth-child(even)::before{right:auto;left:-9px}
+.tarjeta-evento{width:100%;overflow:hidden;background:#302723;border:1px solid rgba(156,128,96,.45)}
+.imagen-evento{display:block;width:100%;height:340px;object-fit:cover;object-position:center}
+.contenido-evento{padding:22px 24px 25px}
+.fecha-evento{display:inline-block;margin-bottom:9px;color:#c4a982;font-size:.9rem;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+.titulo-evento{margin-bottom:10px;font-size:1.4rem}
+.texto-evento{color:#ded6c8}
+.ubicacion-evento{margin-top:14px;color:#c4a982;font-size:.9rem}
+.pie-pagina{margin-top:45px;padding:25px 0;text-align:center;color:#ded6c8;border-top:1px solid #9c8060}
+@media(max-width:700px){
+.encabezado{padding:50px 0 35px}
+.linea-tiempo::before{left:10px}
+.evento,.evento:nth-child(even){width:100%;margin-left:0;padding:20px 0 20px 38px}
+.evento::before,.evento:nth-child(even)::before{top:38px;right:auto;left:2px}
+.imagen-evento{height:210px}
+.contenido-evento{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+    
+    
+    
+    <nav class="nav">
+
+            <a href="./index.html">INICIO
+        </a>
+
+        <a href="./galeriaSalamone.html">
+            GALERIA
+        </a>
+
+        <a href="./biografia.html">
+            BIOGRAFÍA
+        </a>
+
+    </nav>
+    
+</nav>
+<header class="encabezado">
+<h1 class="titulo">Ruta Salamónica</h1>
+<h2 class="subtitulo">Recorrido de los alumunos de la E.E.S.T N1</h2>
+<p class="descripcion"> Los alumnos de la modalidad M.M.O de 6to  investigan las obras del Ingeniero Arquitecto Francisco Salamone en distintas localidades de la provincia de Buenos Aires. </p>
+</header>
+<main>
+<section class="linea-tiempo">
+<article class="evento">
+<div class="tarjeta-evento">
+<img class="imagen-evento" src="./obras/ruta1.png" alt="Edificio de la primera localidad del recorrido">
+<div class="contenido-evento">
+<span class="fecha-evento">Saldungaray</span>
+<h2 class="titulo-evento">Portal del cementerio</h2>
+<p class="texto-evento">De estilo Art Decó, esta imponente estructura simboliza el tránsito entre la vida y la muerte. Su diseño presenta una cruz monumental que emerge de una gran rueda, en cuyo centro se encuentra el rostro de Cristo. Según el ángulo desde el cual se lo observe, dicho rostro expresa diferentes emociones: dolor, sufrimiento y muerte.</p>
+<p class="ubicacion-evento">Provincia de Buenos Aires</p>
+</div>
+</div>
+</article>
+<article class="evento">
+<div class="tarjeta-evento">
+<img class="imagen-evento" src="./obras/ruta2.png" alt="Construcción de la segunda localidad del recorrido">
+<div class="contenido-evento">
+<span class="fecha-evento"> Saldungaray</span>
+<h2 class="titulo-evento">Delegación municipal</h2>
+<p class="texto-evento">Ubicada en la Avenida La Plata 302, la delegación de Saldungaray, construida entre 1937 y 1938, se destaca por su volumetría, su mobiliario original y su valor patrimonial. Esta obra de Francisco Salamone se distingue por ser la única delegación que cuenta con un reloj en su torre y, además, por ser la de mayores dimensiones dentro de las proyectadas por el arquitecto. Cabe señalar que no se trata de una municipalidad, sino de una delegación.
+</p>
+<p class="ubicacion-evento">Provincia de Buenos Aires</p>
+</div>
+</div>
+</article>
+
+<article class="evento">
+<div class="tarjeta-evento">
+<img class="imagen-evento" src="./obras/ruta3.png" alt="Obra arquitectónica de la tercera localidad">
+<div class="contenido-evento">
+<span class="fecha-evento">Saldungaray </span>
+<h2 class="titulo-evento">Plaza “Independencia”</h2>
+<p class="texto-evento"> un espacio público que también refleja la influencia del arquitecto Francisco Salamone en la arquitectura y el urbanismo del pueblo. Aunque no es una de sus obras más conocidas, la plaza está diseñada para ser un lugar de encuentro y recreación para los habitantes. .</p>
+<p class="ubicacion-evento">Provincia de Buenos Aires</p>
+</div>
+</div>
+</article>
+
+
+<article class="evento">
+<div class="tarjeta-evento">
+<img class="imagen-evento" src="./obras/ruta5.png" alt="Obra arquitectónica de la tercera localidad">
+<div class="contenido-evento">
+<span class="fecha-evento">Azul</span>
+<h2 class="titulo-evento">Portal del cementerio</h2>
+<p class="texto-evento">De todas las obras que el arquitecto Francisco Salamone realizó en diversos puntos de la provincia de Buenos Aires, una de las más imponentes es el portal del cementerio local.
+.</p>
+<p class="ubicacion-evento">Provincia de Buenos Aires</p>
+</div>
+</div>
+</article>
+
+<article class="evento">
+<div class="tarjeta-evento">
+<img class="imagen-evento" src="./obras/ruta4.png" alt="Obra arquitectónica de la tercera localidad">
+<div class="contenido-evento">
+<span class="fecha-evento">Saldungaray</span>
+<h2 class="titulo-evento">Mercado Municipal:	</h2>
+<p class="texto-evento">Inaugurado en 1938 en presencia del entonces gobernador Manuel Fresco, este edificio cumplía una función clave en la vida económica del pueblo. Actualmente tiene otros usos, pero conserva elementos arquitectónicos originales.
+</p>
+<p class="ubicacion-evento">Provincia de Buenos Aires</p>
+</div>
+</div>
+</article>
+
+
+</section>
+</main>
+
+        <footer class="pie-pagina">
+            <p>© 2026 - 6TO PROG. E.E.S.T N1 MONTE HERMOSO | Proyecto  Francisco Salamone | 	</p>
+        </footer>
+	<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="./galeriaStyles_ajustada.css">-->
+    <title>Galería | Salamone</title>
+    
+    
+
+    <style>
+	
+	    
+	   
+	   
+	   	@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Libre+Baskerville:wght@400&display=swap');
+	
+	@font-face {
+    font-family: "Morrison Regular";
+    src: url("./font/Morrison-Regular.otf") format("opentype");
+    font-display: swap;
+}
+:root {
+    --fondo: #171514;
+    --panel: #1c1918;
+    --crema: #eee7d8;
+    --crema-suave: #cfc5b2;
+    --dorado: #b08a4f;
+    --dorado-claro: #d0ae70;
+    --borde: rgba(208, 174, 112, .75);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--crema);
+    font-family: 'Montserrat', sans-serif;
+    background: var(--fondo) url("./obras/cieloDeco.png") center / cover fixed no-repeat;
+      background-size: 100% 100%;
+    overflow-x: hidden;
+}
+
+.pagina-galeria {
+    position: relative;
+    width: min(100% - 40px, 1540px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 14px 28px 34px;
+    
+}
+
+/*.pagina-galeria::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid var(--borde);
+    pointer-events: none;
+    z-index: 20;
+}
+*/
+
+
+ .encabezado {
+            padding: 70px 0 45px;
+            text-align: center;
+        }
+
+        .titulo {
+	     font-family: "Morrison Regular";
+            margin-bottom: 12px;
+            font-size: 150px;
+	    
+        }
+
+        .subtitulo {
+            margin-bottom: 20px;
+            color: #c4a982;
+            font-size: 1.3rem;
+        }
+
+        .descripcion {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ded6c8;
+        }
+
+.nav {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(28px, 5.5vw, 70px);
+    min-height: 110px;
+    padding: 20px 24px;
+}
+
+.nav a {
+    position: relative;
+    color: var(--crema);
+    text-decoration: none;
+    font-family: "Cinzel", serif;
+    font-size: clamp(12px, 1.35vw, 20px);
+    font-weight: 600;
+    letter-spacing: clamp(1px, .28vw, 4px);
+    transition: color .3s ease;
+}
+
+.nav a::before,
+.nav a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: clamp(12px, 2vw, 30px);
+    height: 1px;
+    background: var(--dorado);
+}
+
+.nav a::before {
+    right: calc(100% + 18px);
+}
+
+.nav a::after {
+    left: calc(100% + 18px);
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.galeria {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: minmax(250px, .78fr) minmax(0, 2fr);
+    align-items: stretch;
+    gap: clamp(16px, 2vw, 28px);
+    width: 100%;
+    max-width: 1320px;
+    margin: 12px auto 0;
+}
+
+.panel-escultura {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    height: clamp(470px, 82vh, 850px);
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    background: #111;
+}
+
+.imagen-escultura {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center 35%;
+    transition: transform .8s ease;
+}
+
+.panel-escultura:hover .imagen-escultura {
+    transform: scale(1.025);
+}
+
+.panel-escultura::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 8, 7, .45), transparent 38%);
+    pointer-events: none;
+}
+
+.esquina-panel {
+    position: absolute;
+    z-index: 5;
+    width: 25px;
+    height: 25px;
+    border-color: var(--dorado-claro);
+    border-style: solid;
+    pointer-events: none;
+}
+
+.esquina-superior-izquierda {
+    top: 8px;
+    left: 8px;
+    border-width: 1px 0 0 1px;
+}
+
+.esquina-superior-derecha {
+    top: 8px;
+    right: 8px;
+    border-width: 1px 1px 0 0;
+}
+
+.esquina-inferior-izquierda {
+    bottom: 8px;
+    left: 8px;
+    border-width: 0 0 1px 1px;
+}
+
+.esquina-inferior-derecha {
+    right: 8px;
+    bottom: 8px;
+    border-width: 0 1px 1px 0;
+}
+
+.panel-contenido {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    background: var(--panel);
+}
+
+.imagen-principal {
+    position: relative;
+    min-width: 0;
+    height: clamp(300px, 38vw, 470px);
+    overflow: hidden;
+    border-bottom: 1px solid var(--borde);
+    background: #100e0d;
+}
+
+.imagen-principal a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.imagen-principal img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .7s ease;
+    object-position: center 15%;
+    
+}
+
+.imagen-principal:hover img {
+    transform: scale(1.02);
+}
+
+.informacion-obra {
+    position: relative;
+    padding: 34px clamp(22px, 3vw, 42px) 30px;
+}
+
+.informacion-obra::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: clamp(22px, 3vw, 42px);
+    width: min(270px, 55%);
+    height: 1px;
+    background: var(--dorado);
+}
+
+.informacion-obra::after {
+    content: "◇";
+    position: absolute;
+    top: 9px;
+    left: calc(clamp(22px, 3vw, 42px) - 7px);
+    padding: 0 8px;
+    color: var(--dorado-claro);
+    background: var(--panel);
+    font-size: 18px;
+}
+
+.titulo-obra h1 {
+    margin-bottom: 10px;
+    color: var(--crema);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(25px, 2.5vw, 39px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.titulo-obra h2 {
+    margin-bottom: 13px;
+    color: var(--dorado-claro);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.descripcion-obra {
+    max-width: 850px;
+    color: var(--crema-suave);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.boton-siguiente {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    padding: 12px 20px;
+    border: 1px solid var(--dorado-claro);
+    color: var(--crema);
+    background: transparent;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-decoration: none;
+    transition: color .3s ease, background .3s ease, border-color .3s ease;
+}
+
+.boton-siguiente span {
+    color: var(--dorado-claro);
+    font-size: 20px;
+    transition: transform .3s ease;
+}
+
+.boton-siguiente:hover {
+    color: var(--fondo);
+    background: var(--dorado-claro);
+    border-color: var(--dorado-claro);
+}
+
+.boton-siguiente:hover span {
+    color: var(--fondo);
+    transform: translateX(5px);
+}
+
+@media (max-width: 900px) {
+    .pagina-galeria {
+        width: calc(100% - 24px);
+        padding: 10px 18px 28px;
+    }
+
+    .galeria {
+        grid-template-columns: minmax(190px, .7fr) minmax(0, 1.5fr);
+        gap: 14px;
+    }
+
+    .panel-escultura {
+        height: 570px;
+    }
+
+    .imagen-principal {
+        height: 350px;
+    }
+
+    .informacion-obra {
+        padding: 32px 22px 24px;
+    }
+
+    .titulo-obra h1 {
+        font-size: clamp(22px, 3vw, 30px);
+    }
+}
+
+@media (max-width: 650px) {
+    .pagina-galeria {
+        width: calc(100% - 14px);
+        padding: 8px 12px 22px;
+    }
+
+    .navegacion {
+        min-height: 75px;
+        gap: 14px 25px;
+        padding: 18px 8px;
+    }
+
+    .navegacion a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .navegacion a::before,
+    .navegacion a::after {
+        display: none;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 12px;
+    }
+
+    .panel-escultura {
+        height: min(115vw, 500px);
+        min-height: 300px;
+    }
+
+    .imagen-escultura {
+        object-position: center 30%;
+    }
+
+    .imagen-principal {
+        height: clamp(230px, 65vw, 380px);
+    }
+
+    .informacion-obra {
+        padding: 34px 20px 24px;
+    }
+
+    .titulo-obra h1 {
+        font-size: clamp(22px, 6vw, 30px);
+    }
+
+    .titulo-obra h2 {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .descripcion-obra {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+	    
+	    
+	    
+	    
+	    
+	    
+	</style>
+</head>
+
+ </head>
+
+<body>
+    
+    <div class="pagina-galeria">
+      
+    <nav class="nav">
+
+            <a href="./index.html">INICIO
+        </a>
+
+        <a href="./ruta_salamonica.html">
+            RUTA SALAMONICA 
+        </a>
+
+        <a href="./biografia.html">
+            BIOGRAFÍA
+        </a>
+
+    </nav>
+    
+    
+    
+    
+    <header class="encabezado">
+<h1 class="titulo">GALERIA</h1>
+<h2 class="subtitulo">Algunas de las obras del arquitecto junto con su descripcion</h2>
+</header>
+
+        <main class="galeria" id="galeria">
+            <section class="panel-escultura" aria-label="Escultura destacada">
+                <span class="esquina-panel esquina-superior-izquierda"></span>
+                <span class="esquina-panel esquina-superior-derecha"></span>
+                <span class="esquina-panel esquina-inferior-izquierda"></span>
+                <span class="esquina-panel esquina-inferior-derecha"></span>
+                <img
+                    src="/home/morena/Downloads/Faceted Stone Guardian with Cross.png"
+                    alt="Escultura de un ángel con una cruz"
+                    class="imagen-escultura"
+                >
+            </section>
+
+            <section class="panel-contenido" id="obra">
+                <div class="imagen-principal">
+                    <a href="/home/morena/Desktop/salamone/obras/rip.jpg" target="_blank" rel="noopener">
+                        <img
+                            src="/home/morena/Desktop/salamone/obras/rip.jpg"
+                            alt="Obra arquitectónica de Francisco Salamone"
+                        >
+                    </a>
+                </div>
+		
+
+                <div class="informacion-obra">
+                    <div class="titulo-obra">
+                        <h1>“EL ÁNGEL EXTERMINADOR”</h1>
+                        <h2>DESCRIPCIÓN DE LA OBRA</h2>
+                        <p class="descripcion-obra">
+                            Una de las expresiones monumentales más reconocibles de la arquitectura de Francisco Salamone. Su composición combina geometría, monumentalidad y una marcada estética Art Déco, convirtiendo la arquitectura en un elemento protagonista del paisaje.
+                        </p>
+                        <a class="boton-siguiente" href="#galeria">SIGUIENTE <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <br>
+    <br>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tituloObras = [
+          "“EL ÁNGEL EXTERMINADOR”",
+          "“PORTAL DEL CEMENTERIO”",
+          "“MATADERO”"
+        ];
+
+        const descripciones = [
+          "Una de las expresiones monumentales más reconocibles de la arquitectura de Francisco Salamone. Su composición combina geometría, monumentalidad y una marcada estética Art Déco, convirtiendo la arquitectura en un elemento protagonista del paisaje.",
+          "Es una estructura imponente con una cruz monumental, símbolo de la entrada al más allá. Es una manifestación de estilo Art Déco, reconocida a nivel internacional. Esta imponente estructura simboliza el tránsito entre la vida y la muerte.",
+          "El Matadero Municipal de Saldungaray fue inaugurado a finales de la década de 1930. Este matadero no solo cumple con su función práctica, sino que también refleja la intención de Salamone de dotar a los edificios utilitarios con un carácter estético distintivo"
+	  ];
+	  
+
+        const imagesDerecha = [
+          "/home/morena/Desktop/salamoneWeb1.2/obras/rip.jpg",
+          "./obras/saldun.jpeg",
+         "./obras/matadero.jpeg"
+        ];
+
+        const imagesIzquierda = [
+          "/home/morena/Desktop/salamoneWeb1.2/obras/azul.jpeg",
+          "/home/morena/Desktop/salamoneWeb1.2/obras/saldun.jpeg",
+          "/home/morena/Desktop/salamoneWeb1.2/obras/azul.jpeg"
+        ];
+
+        let indice = 0;
+
+        const imgDerecha = document.querySelector(".imagen-principal img");
+        const enlaceDerecha = document.querySelector(".imagen-principal a");
+        const imgIzquierda = document.querySelector(".imagen-escultura");
+        const boton = document.querySelector(".boton-siguiente");
+        const tituloObra = document.querySelector(".titulo-obra h1");
+        const descripcion = document.querySelector(".descripcion-obra");
+
+        boton.addEventListener("click", function (evento) {
+          evento.preventDefault();
+
+          indice = (indice + 1) % imagesDerecha.length;
+
+          try {
+            imgDerecha.src = imagesDerecha[indice];
+            enlaceDerecha.href = imagesDerecha[indice];
+            imgIzquierda.src = imagesIzquierda[indice];
+            tituloObra.textContent = tituloObras[indice];
+            descripcion.textContent = descripciones[indice];
+            console.log("pressing button | índice: " + indice);
+          } catch (error) {
+            console.warn("file path error ", error);
+          }
+        });
+      });
+    </script>
+</body>
+</html>
+

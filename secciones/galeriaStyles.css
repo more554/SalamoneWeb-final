@@ -1,0 +1,673 @@
+
+/*fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+
+/*vars*/
+:root {
+    --bg: #171514;
+    --panel: #1c1918;
+
+    --cream: #eee7d8;
+    --cream-soft: #cfc5b2;
+
+    --gold: #b08a4f;
+    --gold-light: #d0ae70;
+
+    --border: rgba(208, 174, 112, .75);
+}
+
+
+/*reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+	
+    /*background: var(--bg);*/
+    
+    background: url("/home/morena/Downloads/cieloDeco.png");
+    
+    color: var(--cream);
+
+    font-family: 'Montserrat', sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/*contenedor*/
+
+.gallery-page {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    width:2000px
+    /* calc(100% - 30px)*/;
+
+    margin: 0 0px;
+
+    padding: 18px 25px 25px;
+
+    /*border: 1px solid var(--border);*/
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(176, 138, 79, .04),
+            transparent 45%
+        ),
+        var(--bg);
+}
+
+
+/*marcio gris*/
+.gallery-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border: 1px var(--gold);
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+
+
+/*nav*/
+.nav {
+    position: relative;
+
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+
+    z-index: 30;
+}
+
+
+.nav a {
+	font-weight: bold;
+
+    position: relative;
+
+    color: var(--crema);
+
+    text-decoration: none;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 17px;
+
+    letter-spacing: 4px;
+
+    transition: .3s ease;
+}
+
+
+.nav a::before,
+.nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 30px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+.nav a::before {
+    right: calc(100% + 22px);
+}
+
+.nav a::after {
+    left: calc(100% + 22px);
+}
+
+
+.nav a:hover {
+    color: white;
+}
+
+
+
+
+
+
+
+/*galeria*/
+.gallery {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: grid;
+
+    grid-template-columns: 31% 69%;
+
+    gap: 24px;
+
+    margin-top: 35px;
+
+    min-height: calc(100vh - 150px);
+}
+
+
+/* encuadre izq*/
+
+.statue-panel {
+
+    position: relative;
+
+    min-height: 730px;
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+
+/* imagen de la escultura */
+
+.statue-image {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: transform 1s ease;
+}
+
+
+.statue-panel:hover .statue-image {
+
+    transform: scale(1.025);
+
+}
+
+
+/* degradado inferior */
+
+.statue-panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(36, 47, 87, .55),
+            transparent 35%
+        );
+
+    pointer-events: none;
+}
+
+
+/*decoracion artdeco panel izquierdo*/
+
+.panel-corner {
+
+    position: absolute;
+
+    z-index: 5;
+
+    width: 25px;
+    height: 25px;
+
+    border-color: var(--gold-light);
+    border-style: solid;
+}
+
+
+.panel-corner.tl {
+    top: 8px;
+    left: 8px;
+
+    border-width: 1px 0 0 1px;
+}
+
+.panel-corner.tr {
+    top: 8px;
+    right: 8px;
+
+    border-width: 1px 1px 0 0;
+}
+
+.panel-corner.bl {
+    bottom: 8px;
+    left: 8px;
+
+    border-width: 0 0 1px 1px;
+}
+
+.panel-corner.br {
+    bottom: 8px;
+    right: 8px;
+
+    border-width: 0 1px 1px 0;
+}
+
+
+/*cuadro derecho*/
+.content-panel {
+
+    display: grid;
+
+    grid-template-rows: minmax(430px, 1fr) auto;
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+
+    min-height: 730px;
+
+    overflow: hidden;
+}
+
+
+/* img princiapl */
+
+.main-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--border);
+
+    background: #111;
+}
+
+
+.main-image img {
+
+    width: 1290px;
+    height: 800px;
+
+    display: block;
+
+    */object-fit: cover;*/
+
+    object-position: center top ;
+
+    transition: transform 1s ease;
+    
+    cursor: pointer;
+}
+
+
+.main-image:hover img {
+
+    transform: scale(1.015);
+
+}
+
+#next-btn{
+  font-size:40px;
+  
+}
+
+
+/* oscurecimiento */
+
+.main-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 55%,
+            rgba(10, 8, 7, .25)
+        );
+
+    pointer-events: none;
+}
+
+
+/*info */
+
+.work-info {
+
+    position: relative;
+
+    padding: 28px 40px 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 130px;
+
+    gap: 35px;
+
+    align-items: center;
+}
+
+
+/* línea decorativa */
+
+.work-info::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 27px;
+
+    left: 40px;
+
+    width: 270px;
+
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+/* diamante */
+
+.work-info::after {
+
+    content: "◇";
+
+    position: absolute;
+
+    top: 16px;
+
+    left: 33px;
+
+    background: var(--panel);
+
+    padding: 0 8px;
+
+    color: var(--gold-light);
+
+    font-size: 18px;
+}
+
+
+/* titulo*/
+
+.work-title {
+
+    padding-top: 25px;
+}
+
+
+.work-title h1 {
+
+    font-family: 'Cinzel', serif;
+
+    font-size: clamp(
+        28px,
+        3vw,
+        48px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    letter-spacing: 1px;
+
+    color: var(--cream);
+
+    margin-bottom: 10px;
+}
+
+
+.work-title h2 {
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color: var(--cream);
+
+    margin-bottom: 15px;
+}
+
+
+/* descripcion*/
+
+.work-description {
+
+    max-width: 850px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    font-weight: 300;
+
+    color: var(--cream-soft);
+}
+
+/*responsive*/
+
+@media (max-width: 1100px) {
+
+    .gallery {
+
+        grid-template-columns: 35% 65%;
+    }
+
+    .gallery-arrow.left {
+
+        left: 35%;
+    }
+
+    .work-info {
+
+        padding: 25px;
+    }
+
+    .work-info::before {
+
+        left: 25px;
+    }
+
+    .work-info::after {
+
+        left: 18px;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .gallery-page {
+
+        width: calc(100% - 20px);
+
+        margin: 0 10px;
+
+        padding: 10px;
+    }
+
+
+    .nav {
+
+        height: 75px;
+
+        gap: 25px;
+    }
+
+
+    .nav a {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-top: 25px;
+    }
+
+
+    .statue-panel {
+
+        min-height: 550px;
+
+        height: 65vh;
+    }
+
+
+    .content-panel {
+
+        min-height: auto;
+
+        display: block;
+    }
+
+
+    .main-image {
+
+        height: 55vh;
+
+        min-height: 400px;
+    }
+
+
+    .work-info {
+
+        display: block;
+
+        padding: 35px 25px;
+    }
+
+
+    .ornament {
+
+        display: none;
+    }
+
+
+    .gallery-arrow.left {
+
+        left: 5px;
+
+        top: 28%;
+    }
+
+
+    .gallery-arrow.right {
+
+        right: 5px;
+
+        top: 28%;
+    }
+
+}
+
+/*responsive*/
+@media (max-width: 500px) {
+
+    .gallery-page {
+
+        padding: 7px;
+    }
+
+
+    .nav {
+
+        gap: 14px;
+    }
+
+
+    .nav a {
+
+        font-size: 9px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .statue-panel {
+
+        min-height: 430px;
+    }
+
+
+    .main-image {
+
+        height: 45vh;
+
+        min-height: 300px;
+    }
+
+
+    .work-title h1 {
+
+        font-size: 28px;
+    }
+
+
+    .work-title h2 {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .work-description {
+
+        font-size: 13px;
+    }
+
+}

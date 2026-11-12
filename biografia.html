@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografia | Salamone</title>
+    <style>
+	
+	@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Libre+Baskerville:wght@400&display=swap');
+	
+	@font-face {
+    font-family: "Morrison Regular";
+    src: url("./font/Morrison-Regular.otf") format("opentype");
+    font-display: swap;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+	
+	
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #e9e2d4;
+            	     min-height: 100%;
+    scroll-behavior: smooth;
+    background:url("./obras/cieloDeco.png") center / cover fixed no-repeat;
+        background-size: 100% 100%;
+        }
+
+        .contenedor {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+     
+     
+     nav {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(28px, 5.5vw, 70px);
+    min-height: 110px;
+    padding: 20px 24px;
+}
+
+.nav a {
+    position: relative;
+    color: var(--crema);
+    text-decoration: none;
+    font-family: "Cinzel", serif;
+    font-size: clamp(12px, 1.35vw, 20px);
+    font-weight: 600;
+    letter-spacing: clamp(1px, .28vw, 4px);
+    transition: color .3s ease;
+}
+
+.nav a::before,
+.nav a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: clamp(12px, 2vw, 30px);
+    height: 1px;
+    background: var(--dorado);
+}
+
+.nav a::before {
+    right: calc(100% + 18px);
+}
+
+.nav a::after {
+    left: calc(100% + 18px);
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+        .encabezado {
+            padding: 70px 0 45px;
+            text-align: center;
+        }
+
+        .titulo {
+	     font-family: "Morrison Regular";
+            margin-bottom: 12px;
+            font-size: 150px;
+	    
+        }
+
+        .subtitulo {
+            margin-bottom: 20px;
+            color: #c4a982;
+            font-size: 1.3rem;
+        }
+
+        .descripcion {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ded6c8;
+        }
+
+        .bloque-flexible {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            margin: 55px ;
+            padding: 25px;
+            
+/* From https://css.glass */
+background: rgba(183, 184, 169, 0.16);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.7px);
+-webkit-backdrop-filter: blur(9.7px);
+border: 1px solid rgba(183, 184, 169, 0.89);
+}
+{
+        .bloque-flexible:nth-child(even) 
+            flex-direction: row-reverse;
+        }
+
+        .imagen-bloque {
+            width: 42%;
+            max-height: 280px;
+            object-fit: cover;
+	    object-position: 70% 20%;
+        }
+
+        .texto-bloque {
+            flex: 1;
+        }
+
+        .texto-bloque h2 {
+            margin-bottom: 12px;
+            color: #c4a982;
+        }
+
+        .pie-pagina {
+            margin-top: 70px;
+            padding: 25px 0;
+            text-align: center;
+            color: #ded6c8;
+            border-top: 1px solid #9c8060;
+        }
+
+        @media (max-width: 700px) {
+            .navegacion {
+                flex-wrap: wrap;
+                gap: 15px 25px;
+            }
+
+            .encabezado {
+                padding: 45px 0 30px;
+            }
+
+            .bloque-flexible,
+            .bloque-flexible:nth-child(even) {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 20px;
+                padding: 18px;
+            }
+
+            .imagen-bloque {
+                width: 100%;
+                max-height: 230px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+ 
+ 
+ 
+   <nav class="nav">
+
+            <a href="./index.html">INICIO
+        </a>
+
+        <a href="./ruta_salamonica.html">
+            RUTA SALAMONICA 
+        </a>
+
+        <a href="./galeriaSalamone.html">
+	    GALERIA
+        </a>
+
+    </nav>
+
+        <header class="encabezado">
+            <h1 class="titulo">BIOGRAFIA </h1>
+            <h2 class="subtitulo">Quien fue Francisco Salamone (1897–1959) </h2>
+            <p class="descripcion">
+                 destacado arquitecto e ingeniero ítalo-argentino reconocido por su monumentales obras públicas de estilo Art Déco y futuristas.
+            </p>
+        </header>
+
+        <main>
+            <section class="bloque-flexible">
+                <img class="imagen-bloque" src="./obras/sala.jpg" alt="Vista de una obra arquitectónica">
+                <div class="texto-bloque">
+                    <h2>Comienzos</h2>
+                    <p>
+			Francisco Salamone nació en 1898 en Leonforte, provincia de Enna, Italia. Poco tiempo después emigró a la Argentina junto a su familia. Su formación técnica comenzó en la Escuela Industrial Otto Krause, en la ciudad de Buenos Aires, donde se destacó por su desempeño académico y egresó en 1916 como técnico constructor. Posteriormente, en 1920, obtuvo el título de arquitecto e ingeniero civil en la Universidad Nacional de Córdoba.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bloque-flexible">
+                <img class="imagen-bloque" src="./obras/salamone_irl.png" alt="Detalle de una construcción">
+                <div class="texto-bloque">
+                    <h2>Trayectoria</h2>
+                    <p>
+                     
+Sus primeros proyectos datan del año 1935, marcando el inicio de una intensa actividad profesional ligada al desarrollo de obras públicas en distintos municipios de la provincia de Buenos Aires, impulsada por sus vínculos políticos. Su labor alcanzó gran notoriedad durante la gestión del gobernador Manuel Fresco (1936-1940), quien lo contrató para llevar adelante un ambicioso plan de infraestructura urbana y edilicia.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bloque-flexible">
+                <img class="imagen-bloque" src="./obras/francisco-salamone-fue.avif" alt="Fachada de una obra arquitectónica">
+                <div class="texto-bloque">
+                    <h2>Sus obras</h2>
+                    <p>
+                        Entre las obras más relevantes de Salamone se destacan edificios municipales, escuelas, hospitales, cementerios, plazas y, de manera particular, mataderos, una tipología específica de la época. Estas construcciones, de variadas escalas y temáticas, introdujeron un nuevo lenguaje arquitectónico en localidades pequeñas y alejadas del centro urbano, como Carhué, Azul, Coronel Pringles, Laprida, Saldungaray y Lobería.
+
+Francisco Salamone falleció en la ciudad de Buenos Aires en el año 1959, dejando un legado arquitectónico único en la historia de la obra pública argentina. 
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="pie-pagina">
+            <p>© 2026 - 6TO PROG. E.E.S.T N1 MONTE HERMOSO | Proyecto  Francisco Salamone | 	</p>
+        </footer>
+	<br>
+    </div>
+</body>
+</html>
